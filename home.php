@@ -43,18 +43,18 @@ $total_bookmarked = $select_bookmark->rowCount();
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
-
+<!----
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>---->
 
 </head>
 <body>
 
 <?php include 'components/user_header.php'; ?>
 
-<div class="banner" style="background-image: linear-gradient(to right, rgba(200, 8,207, 0.3), rgba(28, 70, 184, 0.5)), url(images/banner_img.jpg);">
+<div class="banner" style="background-image: linear-gradient(to right, rgba(200, 8,207, 0.5), rgba(28, 70, 184, 0.5)), url(images/banner_img.jpg);">
      <div class="column1">
        <h1>Turn your ambition into a success story</h1>
        <p>SIAS provide easy and more effective way to learn by analyzing you all the time during taking your lectures</p>

@@ -38,7 +38,7 @@ if(isset($_COOKIE['user_id'])){
 
    <div class="row" style="margin-top:-5%">
  
-      <div class="content" style="position:relative;  width:50%; margin-left:20px;">
+      <div class="content" style="position:relative;  width:50%; margin-left:20px; color:black">
          <strong><h1>Why choose us?</h1></strong>
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nobis distinctio, nisi consequatur ad sequi, rem odit fugiat assumenda eligendi iure aut sunt ratione, tempore porro expedita quisquam.</p>
          <a href="courses.php" class="inline-btn" style="background-color: var(--oragen);">our courses</a>

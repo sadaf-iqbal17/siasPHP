@@ -54,29 +54,56 @@ if(isset($_POST['submit'])){
 <?php include 'components/user_header.php'; ?>
 
 <!-- contact section starts  -->
+<div class="banner" style="background-image: linear-gradient(to right, rgba(241,144,14, 0.3), rgba(241,144,14, 0.2)), url(images/ca.jpg);">
 
+   </div>
+   <h1 class="about-us">Contact Us</h1>
 <section class="contact">
 
    <div class="row">
-
+   <form action="" method="post">
+         <h3>Get in Touch</h3>
+         <input type="text" placeholder="enter your name" required maxlength="100" name="name" class="box">
+         <input type="email" placeholder="enter your email" required maxlength="100" name="email" class="box">
+         <input type="text" min="0" max="9999999999" placeholder="enter your number" required maxlength="10" name="number" class="box">
+         <textarea name="msg" class="box" placeholder="enter your message" required cols="30" rows="10" maxlength="1000"></textarea>
+         <input type="submit" value="send message" class="inline-btn" style="background-color: var(--oragen);" name="submit">
+      </form>
       <div class="image">
          <img src="images/contact-img.svg" alt="">
       </div>
-
-      <form action="" method="post">
-         <h3>get in touch</h3>
-         <input type="text" placeholder="enter your name" required maxlength="100" name="name" class="box">
-         <input type="email" placeholder="enter your email" required maxlength="100" name="email" class="box">
-         <input type="number" min="0" max="9999999999" placeholder="enter your number" required maxlength="10" name="number" class="box">
-         <textarea name="msg" class="box" placeholder="enter your message" required cols="30" rows="10" maxlength="1000"></textarea>
-         <input type="submit" value="send message" class="inline-btn" name="submit">
-      </form>
 
    </div>
    
 
 </section>
+<section class="map_divs">
+<div class="container">
+    <div class="contact-details">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">COMSATS University Islamabad Sahiwal campus.</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+0098 9893 5647</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-two">sadafiqbal2001@gmail.com</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="900" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=sahiwal&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width: 900px;;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:900px;}</style></div></div>
 
+ 
+    </div>
+  </div>
+        </section>
 <!---
 <div class="container-fluid">
 		<div class="row">
