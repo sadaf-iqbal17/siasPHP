@@ -197,9 +197,11 @@ if(isset($_POST['update_now'])){
    <div class="video-details">
       <video src="uploaded_files/<?= $fetch_content['video']; ?>" class="video" poster="uploaded_files/<?= $fetch_content['thumb']; ?>" controls autoplay></video>
       <h3 class="title"><?= $fetch_content['title']; ?></h3>
+      <a href="#" class="inline-btn assess" style="float:right">Enable Assessment</a>
       <div class="info">
          <p><i class="fas fa-calendar"></i><span><?= $fetch_content['date']; ?></span></p>
          <p><i class="fas fa-heart"></i><span><?= $total_likes; ?> likes</span></p>
+
       </div>
       <div class="tutor">
          <img src="uploaded_files/<?= $fetch_tutor['image']; ?>" alt="">

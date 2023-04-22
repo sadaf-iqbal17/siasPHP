@@ -42,31 +42,110 @@ $total_bookmarked = $select_bookmark->rowCount();
     <script src="https://kit.fontawesome.com/094eaba97f.js" crossorigin="anonymous"></script>
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+       <!-- bootstrap css 
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">--->
 
-<!----
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>---->
 
 </head>
 <body>
 
 <?php include 'components/user_header.php'; ?>
 
-<div class="banner" style="background-image: linear-gradient(to right, rgba(200, 8,207, 0.5), rgba(28, 70, 184, 0.5)), url(images/banner_img.jpg);">
-     <div class="column1">
+<div class="banner" style="background-image: linear-gradient(to right, rgba(200, 8,207, 0.3), rgba(28, 70, 184, 0.3)), url(images/banner_img.jpg); height:90vh;">
+     <div class="column1" style=" ">
        <h1>Turn your ambition into a success story</h1>
-       <p>SIAS provide easy and more effective way to learn by analyzing you all the time during taking your lectures</p>
+       <p class="intro">SIAS provide easy and more effective way to learn by analyzing you all the time during taking your lectures</p>
        <button>Get started</button>
      </div>
-     <div class="column2">
+     <div class="column2" >
      </div>
    </div>
    
+
+
+   <h1 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Testimonials</h1>
+<
+   <!---Testimonials---
    
-   <!---Testimonials--->
-   
+
+<section id="features">
+
+  <div class="container my-5 sec-features">
+    <h1 class="text-center font-weight-bold" style="font-family: 'Roboto Condensed', sans-serif;font-size: 3.5rem; color: #007bff;">Features</h1>
+    <div class="d-flex flex-wrap justify-content-center mt-lg-5">
+      <div class="card mx-3 my-3 shadow" style="width: 18rem;">
+        <div class="card-body d-flex align-items-center" style="height: 150px;">
+          <i class="fas fa-user-circle fa-7x mx-auto" style="color: #007bff;"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">User-friendly interface</h5>
+          <p class="card-text text-center">Our website offers a modern, user-friendly interface that makes it easy to use and navigate.</p>
+        </div>
+      </div>
+  
+      <div class="card mx-3 my-3 shadow" style="width: 18rem;">
+        <div class="card-body d-flex align-items-center" style="height: 150px;">
+          <i class="fas fa-robot fa-7x mx-auto" style="color: #007bff;"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">AI-powered analysis</h5>
+          <p class="card-text text-center">Our website uses artificial intelligence and computer vision to analyze student attentiveness during video lectures.</p>
+        </div>
+      </div>
+  
+      <div class="card mx-3 my-3 shadow" style="width: 18rem;">
+        <div class="card-body d-flex align-items-center" style="height: 150px;">
+          <i class="fas fa-chart-line fa-7x mx-auto" style="color: #007bff;"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">Real-time reports</h5>
+          <p class="card-text text-center">Our website provides real-time reports and monitoring of student attentiveness, allowing teachers to track progress and improvement.</p>
+        </div>
+      </div>
+  
+      <div class="card mx-3 my-3 shadow" style="width: 18rem;">
+        <div class="card-body d-flex align-items-center" style="height: 150px;">
+          <i class="fas fa-cog fa-7x mx-auto" style="color: #007bff;"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">Customizable settings</h5>
+          <p class="card-text text-center">Our website allows users to customize their settings and create a personalized experience tailored to their needs.</p>
+        </div>
+      </div>
+  
+    
+      <div class="card mx-3 my-3 shadow" style="width: 18rem;">
+        <div class="d-flex justify-content-center">
+          <i class="fas fa-lock fa-5x mt-3" style="color: #6c757d;"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">Secure data storage</h5>
+          <p class="card-text text-center">Our website uses secure servers and data encryption to ensure that your data is safe and protected.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section> --->
+<sction class="quick-select">
+   <div class="box-container">
+    <div class="box">
+
+    </div>
+    <div class="box">
+
+    </div>
+    <div class="box"> 
+
+    </div>
+    <div class="box">
+
+    </div>
+    <div class="box">
+      
+    </div>
+   </div>
+
+</section>
 <!-- quick select section starts  -->
 
 <section class="quick-select">

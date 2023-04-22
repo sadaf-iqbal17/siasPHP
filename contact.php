@@ -53,8 +53,8 @@ if(isset($_POST['submit'])){
 
 <?php include 'components/user_header.php'; ?>
 
-<!-- contact section starts  -->
-<div class="banner" style="background-image: linear-gradient(to right, rgba(241,144,14, 0.3), rgba(241,144,14, 0.2)), url(images/ca.jpg);">
+<!-- contact section starts  --->
+<div class="banner" style="background-image:  linear-gradient(to right, rgba(200, 8,207, 0.3), rgba(28, 70, 184, 0.2)), url(images/ca.jpg);height:82vh;">
 
    </div>
    <h1 class="about-us">Contact Us</h1>
