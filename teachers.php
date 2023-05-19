@@ -33,7 +33,7 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="teachers">
 
-   <h1 class="heading">expert tutors</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Expert Tutors</h3>
 
    <form action="search_tutor.php" method="post" class="search-tutor">
       <input type="text" name="search_tutor" maxlength="100" placeholder="search tutor..." required>
@@ -43,9 +43,9 @@ if(isset($_COOKIE['user_id'])){
    <div class="box-container">
 
       <div class="box offer">
-         <h3>become a tutor</h3>
+         <h3>Become a tutor</h3>
          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, magnam!</p>
-         <a href="admin/register.php" class="inline-btn">get started</a>
+         <a href="admin/register.php" class="inline-btn">Get started</a>
       </div>
 
       <?php

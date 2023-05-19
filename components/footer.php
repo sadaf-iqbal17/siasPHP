@@ -22,18 +22,18 @@
 
         <ul class="box">
           <li class="link_name">Useful Links</li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">About us</a></li>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="contact.php">Contact us</a></li>
+          <li><a href="about.php">About us</a></li>
           <li><a href="#">Get started</a></li>
         </ul>
 
         <ul class="box">
           <li class="link_name">Courses</li>
-          <li><a href="#">HTML & CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">Photography</a></li>
-          <li><a href="#">Photoshop</a></li>
+          <li><a href="courses.php">HTML & CSS</a></li>
+          <li><a href="courses.php">JavaScript</a></li>
+          <li><a href="courses.php">Photography</a></li>
+          <li><a href="courses.php">Photoshop</a></li>
         </ul>
 
         <ul class="box input-box">

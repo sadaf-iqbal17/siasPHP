@@ -1318,3 +1318,11 @@ padding-bottom: 13px;
    }
 
 }
+.about-us {
+   text-align:center;
+font-size:4rem;
+   font-weight:980 !important;
+   margin-top:25px;
+   font-family: 'Fasthand', cursive;
+   color:black;
+}

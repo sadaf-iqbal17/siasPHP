@@ -1944,8 +1944,8 @@ padding-bottom: 13px;
 }
 .about-us {
    text-align:center;
-   font-size: 5.0rem;
-   font-weight:950 !important;
+font-size:4rem;
+   font-weight:980 !important;
    margin-top:25px;
    font-family: 'Fasthand', cursive;
    color:black;
@@ -2078,4 +2078,10 @@ padding-bottom: 13px;
  }
 
 
- 
+.testimonial-style{
+   
+
+   text-align:justify; 
+    background: linear-gradient(to right, rgba(200, 8,207, 0.9), rgba(77,194,205, 0.8))
+   }
+

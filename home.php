@@ -31,7 +31,7 @@ $total_bookmarked = $select_bookmark->rowCount();
    <title>home</title>
 
    <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- font awsm script -->
     <script src="https://kit.fontawesome.com/dbb1a1b31e.js" crossorigin="anonymous"></script>
         <!-- bootstrap script -->
@@ -63,9 +63,8 @@ $total_bookmarked = $select_bookmark->rowCount();
    
 
 
-   <h1 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Testimonials</h1>
-<
-   <!---Testimonials---
+
+   <!---Testimonials
    
 
 <section id="features">
@@ -126,23 +125,35 @@ $total_bookmarked = $select_bookmark->rowCount();
       </div>
     </div>
   </section> --->
-<sction class="quick-select">
+  
+<section class="quick-select">
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Testimonials</h3>
+
    <div class="box-container">
-    <div class="box">
+    <div class="box testimonial-style" style=" padding:35px 30px 25px 30px;">
+   <center> <i class="fa-sharp fa-solid fa-gear" style="color: #ffffff; font-size:5em"></i></center>
+          <h3  class="about-us" style="color:white; font-size:2rem;  font-weight:900 !important" >User Friendly Interface</h3>
+<p style="color:white ;font-size:1.5em;">Our website offers a modern, user-friendly interface that makes it easy to navigate</p>
+    </div>
 
+    <div class="box testimonial-style" style=" padding:35px 30px 30px 30px; ">
+    <center> <i class="fa-sharp fa-solid fa-users-viewfinder" style="color: #ffffff; font-size:5em"></i></center>
+<h3  class="about-us" style=" color:white;font-size:2rem; font-weight:900 !important" >AI-powered analysis</h3>
+<p style="color:white ;font-size:1.5em;">Our website uses artificial intelligence and computer vision to analyze student attentiveness during video lectures</p>
     </div>
-    <div class="box">
 
-    </div>
-    <div class="box"> 
+<div class="box testimonial-style" style="padding:60px 30px 40px 30px; ">
+   <center> <i class="fa-sharp fa-solid fa-magnifying-glass-chart fa-2xl" style="color: #ffffff; font-size:5em"></i></center>
+        <h3  class="about-us" style="color:white;font-size:2rem; font-weight:900  !important" >Real-time reports</h3>
+<p style="color:white ;font-size:1.5em;">Our website provides real-time reports and monitoring of student attentiveness, allowing teachers to track progress.</p>
+</div>
 
-    </div>
-    <div class="box">
+   <div class="box testimonial-style" style="color:white; padding:60px 30px 40px 30px; ">
+   <center> <i class="fa-sharp fa-solid fa-user-lock fa-2xl" style="color: #ffffff; font-size:5em"></i></center>
+        <h3  class="about-us" style="color:white;font-size:2rem; font-weight:900  !important" >Secure data storage</h3>
+<p style="color:white ;font-size:1.5em;">Our website uses secure servers and data encryption to ensure that your data is safe and protected.</p>
+   
 
-    </div>
-    <div class="box">
-      
-    </div>
    </div>
 
 </section>
@@ -150,7 +161,7 @@ $total_bookmarked = $select_bookmark->rowCount();
 
 <section class="quick-select">
 
-   <h1 class="heading">quick options</h1>
+<h1 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Quick Options</h1>
 
    <div class="box-container">
 

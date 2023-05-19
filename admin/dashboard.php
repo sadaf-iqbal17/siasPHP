@@ -48,7 +48,7 @@ $total_comments = $select_comments->rowCount();
    
 <section class="dashboard">
 
-   <h1 class="heading">dashboard</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Dashboard</h3>
 
    <div class="box-container">
 
