@@ -1326,3 +1326,14 @@ font-size:4rem;
    font-family: 'Fasthand', cursive;
    color:black;
 }
+.banner{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   justify-content: flex-start;
+    background-repeat: no-repeat;
+     background-size: cover;  
+      background-position: center;
+      height: 100vh;
+      width:auto;
+ }

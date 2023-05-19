@@ -66,7 +66,7 @@ if(isset($_POST['save_list'])){
 
 <section class="playlist">
 
-   <h1 class="heading">playlist details</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Playlist Details</h3>
 
    <div class="row">
 

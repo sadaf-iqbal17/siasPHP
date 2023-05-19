@@ -57,7 +57,7 @@ if(isset($_POST['delete'])){
 
 <section class="playlists">
 
-   <h1 class="heading">added playlists</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Added Playlists</h3>
 
    <div class="box-container">
    

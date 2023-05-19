@@ -59,7 +59,7 @@ if(isset($_POST['delete_video'])){
    
 <section class="contents">
 
-   <h1 class="heading">your contents</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Your Contents</h3>
 
    <div class="box-container">
 

@@ -233,7 +233,7 @@ $total_bookmarked = $select_bookmark->rowCount();
 
 <section class="courses">
 
-   <h1 class="heading">latest courses</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Latest Courses</h3>
 
    <div class="box-container">
 

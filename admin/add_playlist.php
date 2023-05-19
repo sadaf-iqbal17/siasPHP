@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
    
 <section class="playlist-form">
 
-   <h1 class="heading">create playlist</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Create Playlist</h3>
 
    <form action="" method="post" enctype="multipart/form-data">
       <p>playlist status <span>*</span></p>

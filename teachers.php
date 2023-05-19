@@ -30,6 +30,7 @@ if(isset($_COOKIE['user_id'])){
 <?php include 'components/user_header.php'; ?>
 
 <!-- teachers section starts  -->
+<div class="banner" style="background-image: linear-gradient(to right, rgba(200, 8,207, 0.3), rgba(28, 70, 184, 0.3)), url(images/tutor.jpg); height:80vh;"></div>
 
 <section class="teachers">
 
@@ -44,9 +45,10 @@ if(isset($_COOKIE['user_id'])){
 
       <div class="box offer">
          <h3>Become a tutor</h3>
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, magnam!</p>
+         <p>Inorder to upload your content as a teacher Register here</p>
          <a href="admin/register.php" class="inline-btn">Get started</a>
       </div>
+      
 
       <?php
          $select_tutors = $conn->prepare("SELECT * FROM `tutors`");
