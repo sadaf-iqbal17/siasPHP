@@ -197,7 +197,55 @@ if(isset($_POST['update_now'])){
    <div class="video-details">
       <video src="uploaded_files/<?= $fetch_content['video']; ?>" class="video" poster="uploaded_files/<?= $fetch_content['thumb']; ?>" controls autoplay></video>
       <h3 class="title"><?= $fetch_content['title']; ?></h3>
-      <a href="#" class="inline-btn assess" style="float:right">Enable Assessment</a>
+
+
+<!---enabling camera to record the gestures--->
+      <button class="inline-btn assess" id="toggleCameraButton" style="float:right">Enable Assessment</button>
+
+<video id="camera" autoplay  width="250" height="400"></video>
+<script>
+// Get the video element
+const video = document.getElementById('camera');
+const toggleCameraButton = document.getElementById('toggleCameraButton');
+let stream;
+
+// Function to toggle the camera
+function toggleCamera() {
+  // Check if the camera stream is active
+  if (!stream) {
+    // Access the camera
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      // Access the camera
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(mediaStream) {
+          // Set the video source to the camera stream
+          video.srcObject = mediaStream;
+          stream = mediaStream;
+          toggleCameraButton.textContent = 'Close Camera';
+        })
+        .catch(function(error) {
+          console.error('Error accessing the camera:', error);
+        });
+    } else {
+      console.error('Camera access not supported by the browser');
+    }
+  } else {
+    // Close the camera
+    const tracks = stream.getTracks();
+    tracks.forEach(function(track) {
+      track.stop();
+    });
+    video.srcObject = null;
+    stream = null;
+    toggleCameraButton.textContent = 'Open Camera';
+  }
+}
+
+// Add click event listener to the toggle camera button
+toggleCameraButton.addEventListener('click', toggleCamera);
+</script>
+
+
       <div class="info">
          <p><i class="fas fa-calendar"></i><span><?= $fetch_content['date']; ?></span></p>
          <p><i class="fas fa-heart"></i><span><?= $total_likes; ?> likes</span></p>
