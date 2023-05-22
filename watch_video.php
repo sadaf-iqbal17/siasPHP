@@ -202,7 +202,9 @@ if(isset($_POST['update_now'])){
 <!---enabling camera to record the gestures--->
       <button class="inline-btn assess" id="toggleCameraButton" style="float:right">Enable Assessment</button>
 
-<video id="camera" autoplay  width="250" height="400"></video>
+<video id="camera" autoplay muted width="250" height="400"></video>
+
+
 <script>
 // Get the video element
 const video = document.getElementById('camera');
@@ -244,7 +246,6 @@ function toggleCamera() {
 // Add click event listener to the toggle camera button
 toggleCameraButton.addEventListener('click', toggleCamera);
 </script>
-
 
       <div class="info">
          <p><i class="fas fa-calendar"></i><span><?= $fetch_content['date']; ?></span></p>

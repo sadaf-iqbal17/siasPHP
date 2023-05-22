@@ -48,7 +48,7 @@
    
 <section class="tutor-profile" style="min-height: calc(100vh - 19rem);"> 
 
-   <h1 class="heading">profile details</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Profile Details</h3>
 
    <div class="details">
       <div class="tutor">

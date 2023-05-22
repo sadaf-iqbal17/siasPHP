@@ -32,7 +32,8 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="courses">
 
-   <h1 class="heading">bookmarked playlists</h1>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Enrolled Courses</h3>
+
 
    <div class="box-container">
 
