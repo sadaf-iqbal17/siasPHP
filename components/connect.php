@@ -2,9 +2,9 @@
 
 <?php
 
-   $dsn = 'mysql:host=localhost;dbname=course_db';
-   $username = 'root';
-   $password = " " ;
+$dsn = 'mysql:host=localhost;dbname=course_m';
+$username = "root";
+$password = "" ;
 
    $conn = new PDO($dsn, $username, $password);
 
