@@ -57,13 +57,13 @@ if(isset($_POST['delete'])){
 
 <section class="playlists">
 
-<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Added Playlists</h3>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Added Courses</h3>
 
    <div class="box-container">
    
       <div class="box" style="text-align: center;">
-         <h3 class="title" style="margin-bottom: .5rem;">create new playlist</h3>
-         <a href="add_playlist.php" class="btn">add playlist</a>
+         <h3 class="title" style="margin-bottom: .5rem;">create new course</h3>
+         <a href="add_playlist.php" class="btn">add course</a>
       </div>
 
       <?php
@@ -92,7 +92,7 @@ if(isset($_POST['delete'])){
             <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">update</a>
             <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this playlist?');" name="delete">
          </form>
-         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">view playlist</a>
+         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">view course</a>
       </div>
       <?php
          } 
