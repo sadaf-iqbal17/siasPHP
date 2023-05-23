@@ -139,6 +139,9 @@ if(isset($_POST['update_now'])){
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script async src="jsModel/opencv.js" onload="openCvReady();"></script>
+   <script src="jsModel/utils.js"></script>
 
 </head>
 <body>
@@ -155,7 +158,7 @@ if(isset($_POST['update_now'])){
          $fetch_edit_comment = $verify_comment->fetch(PDO::FETCH_ASSOC);
 ?>
 <section class="edit-comment">
-   <h1 class="heading">edti comment</h1>
+   <h1 class="heading">edit comment</h1>
    <form action="" method="post">
       <input type="hidden" name="update_id" value="<?= $fetch_edit_comment['id']; ?>">
       <textarea name="update_box" class="box" maxlength="1000" required placeholder="please enter your comment" cols="30" rows="10"><?= $fetch_edit_comment['comment']; ?></textarea>
@@ -199,53 +202,20 @@ if(isset($_POST['update_now'])){
       <h3 class="title"><?= $fetch_content['title']; ?></h3>
 
 
-<!---enabling camera to record the gestures--->
-      <button class="inline-btn assess" id="toggleCameraButton" style="float:right">Enable Assessment</button>
-
-<video id="camera" autoplay muted width="250" height="400"></video>
-
-
-<script>
-// Get the video element
-const video = document.getElementById('camera');
-const toggleCameraButton = document.getElementById('toggleCameraButton');
-let stream;
-
-// Function to toggle the camera
-function toggleCamera() {
-  // Check if the camera stream is active
-  if (!stream) {
-    // Access the camera
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      // Access the camera
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function(mediaStream) {
-          // Set the video source to the camera stream
-          video.srcObject = mediaStream;
-          stream = mediaStream;
-          toggleCameraButton.textContent = 'Close Camera';
-        })
-        .catch(function(error) {
-          console.error('Error accessing the camera:', error);
-        });
-    } else {
-      console.error('Camera access not supported by the browser');
-    }
-  } else {
-    // Close the camera
-    const tracks = stream.getTracks();
-    tracks.forEach(function(track) {
-      track.stop();
-    });
-    video.srcObject = null;
-    stream = null;
-    toggleCameraButton.textContent = 'Open Camera';
-  }
-}
-
-// Add click event listener to the toggle camera button
-toggleCameraButton.addEventListener('click', toggleCamera);
-</script>
+      <!---enabling camera to record the gestures--->
+      
+      
+      <button id="startButton" class="inline-btn">Start</button>
+      <button id="stopButton" class="inline-btn">Stop</button>
+      <video id="cam_input" height="220" width="320"></video>
+      <canvas id="canvas_output"></canvas>
+      <script src="eye-detect.js" type="text/JavaScript"></script>
+      <style>
+         #cam_input, #canvas_output {
+            position: absolute;
+            right: 200px;
+         }
+      </style>
 
       <div class="info">
          <p><i class="fas fa-calendar"></i><span><?= $fetch_content['date']; ?></span></p>
@@ -261,7 +231,7 @@ toggleCameraButton.addEventListener('click', toggleCamera);
       </div>
       <form action="" method="post" class="flex">
          <input type="hidden" name="content_id" value="<?= $content_id; ?>">
-         <a href="playlist.php?get_id=<?= $fetch_content['playlist_id']; ?>" class="inline-btn">view playlist</a>
+         <a href="playlist.php?get_id=<?= $fetch_content['playlist_id']; ?>" class="inline-btn">view Course</a>
          <?php
             if($verify_likes->rowCount() > 0){
          ?>

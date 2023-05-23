@@ -45,7 +45,7 @@
     </div>
     <div class="btm_footer">
 
-      &copy; copyright @ <?= date('Y'); ?> by <span>Sadaf</span> | all rights reserved!
+      &copy; copyright @ <?= date('Y'); ?> by <span>G14</span> | all rights reserved!
     </div>
   
 

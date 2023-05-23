@@ -63,10 +63,10 @@ $total_bookmarked = $select_bookmark->rowCount();
                <i class="fas fa-bookmark"></i>
                <div>
                   <h3><?= $total_bookmarked; ?></h3>
-                  <span>saved playlists</span>
+                  <span>saved Courses</span>
                </div>
             </div>
-            <a href="#" class="inline-btn">view playlists</a>
+            <a href="#" class="inline-btn">view Courses</a>
          </div>
 
          <div class="box">
@@ -131,7 +131,7 @@ $total_bookmarked = $select_bookmark->rowCount();
          </div>
          <img src="uploaded_files/<?= $fetch_course['thumb']; ?>" class="thumb" alt="">
          <h3 class="title"><?= $fetch_course['title']; ?></h3>
-         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view playlist</a>
+         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">Enroll Course</a>
       </div>
       <?php
                }

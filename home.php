@@ -174,7 +174,7 @@ $total_bookmarked = $select_bookmark->rowCount();
          <a href="likes.php" class="inline-btn">view likes</a>
          <p>total comments : <span><?= $total_comments; ?></span></p>
          <a href="comments.php" class="inline-btn">view comments</a>
-         <p>saved playlist : <span><?= $total_bookmarked; ?></span></p>
+         <p>saved Courses : <span><?= $total_bookmarked; ?></span></p>
          <a href="bookmark.php" class="inline-btn">view bookmark</a>
       </div>
       <?php
@@ -258,7 +258,7 @@ $total_bookmarked = $select_bookmark->rowCount();
          </div>
          <img src="uploaded_files/<?= $fetch_course['thumb']; ?>" class="thumb" alt="">
          <h3 class="title"><?= $fetch_course['title']; ?></h3>
-         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view playlist</a>
+         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view Courses</a>
       </div>
       <?php
          }
