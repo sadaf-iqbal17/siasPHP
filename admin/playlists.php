@@ -28,9 +28,9 @@ if(isset($_POST['delete'])){
    $delete_bookmark->execute([$delete_id]);
    $delete_playlist = $conn->prepare("DELETE FROM `playlist` WHERE id = ?");
    $delete_playlist->execute([$delete_id]);
-   $message[] = 'playlist deleted!';
+   $message[] = 'Course deleted!';
    }else{
-      $message[] = 'playlist already deleted!';
+      $message[] = 'Course already deleted!';
    }
 }
 
@@ -42,7 +42,7 @@ if(isset($_POST['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Playlists</title>
+   <title>Courses</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -62,8 +62,8 @@ if(isset($_POST['delete'])){
    <div class="box-container">
    
       <div class="box" style="text-align: center;">
-         <h3 class="title" style="margin-bottom: .5rem;">create new course</h3>
-         <a href="add_playlist.php" class="btn">add course</a>
+         <h3 class="title" style="margin-bottom: .5rem;">create new Courses</h3>
+         <a href="add_playlist.php" class="btn">add Courses</a>
       </div>
 
       <?php
@@ -92,12 +92,12 @@ if(isset($_POST['delete'])){
             <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">update</a>
             <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this playlist?');" name="delete">
          </form>
-         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">view course</a>
+         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">view Course</a>
       </div>
       <?php
          } 
       }else{
-         echo '<p class="empty">no playlist added yet!</p>';
+         echo '<p class="empty">no Course added yet!</p>';
       }
       ?>
 

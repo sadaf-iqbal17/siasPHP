@@ -169,7 +169,7 @@ if(isset($_POST['delete_video'])){
          ?>
          <?php
          }else{
-            echo '<option value="" disabled>no playlist created yet!</option>';
+            echo '<option value="" disabled>no Course created yet!</option>';
          }
          ?>
       </select>

@@ -86,9 +86,9 @@ if(isset($_POST['submit'])){
       <input type="text" name="title" maxlength="100" required placeholder="enter video title" class="box">
       <p>video description <span>*</span></p>
       <textarea name="description" class="box" required placeholder="write description" maxlength="1000" cols="30" rows="10"></textarea>
-      <p>video playlist <span>*</span></p>
+      <p>video Course <span>*</span></p>
       <select name="playlist" class="box" required>
-         <option value="" disabled selected>--select playlist</option>
+         <option value="" disabled selected>--select Course</option>
          <?php
          $select_playlists = $conn->prepare("SELECT * FROM `playlist` WHERE tutor_id = ?");
          $select_playlists->execute([$tutor_id]);
@@ -101,7 +101,7 @@ if(isset($_POST['submit'])){
          ?>
          <?php
          }else{
-            echo '<option value="" disabled>no playlist created yet!</option>';
+            echo '<option value="" disabled>no Course created yet!</option>';
          }
          ?>
       </select>

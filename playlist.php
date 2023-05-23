@@ -97,7 +97,7 @@ if(isset($_POST['save_list'])){
             <?php
                if($select_bookmark->rowCount() > 0){
             ?>
-            <button type="submit" name="save_list"><i class="fas fa-bookmark"></i><span>saved</span></button>
+            <button type="submit" name="save_list"><i class="fas fa-bookmark"></i><span>Enrolled</span></button>
             <?php
                }else{
             ?>
