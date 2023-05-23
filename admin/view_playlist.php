@@ -66,7 +66,7 @@ if(isset($_POST['delete_video'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Playlist Details</title>
+   <title>Course Details</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -81,7 +81,7 @@ if(isset($_POST['delete_video'])){
    
 <section class="playlist-details">
 
-<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Playlist Details</h3>
+<h3 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); ">Course Details</h3>
 
    <?php
       $select_playlist = $conn->prepare("SELECT * FROM `playlist` WHERE id = ? AND tutor_id = ?");
@@ -104,7 +104,7 @@ if(isset($_POST['delete_video'])){
          <div class="description"><?= $fetch_playlist['description']; ?></div>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="playlist_id" value="<?= $playlist_id; ?>">
-            <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">update playlist</a>
+            <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">update Course</a>
             <input type="submit" value="delete playlist" class="delete-btn" onclick="return confirm('delete this playlist?');" name="delete">
          </form>
       </div>
@@ -120,7 +120,7 @@ if(isset($_POST['delete_video'])){
 
 <section class="contents">
 
-   <h1 class="heading">playlist videos</h1>
+   <h1 class="heading">Course videos</h1>
 
    <div class="box-container">
 
@@ -156,8 +156,36 @@ if(isset($_POST['delete_video'])){
 
 </section>
 
+<section class="contents">
+   <h1 class="heading">Participants enrolled</h1>
+   <div class="box-container">
+      <?php
+      $select_bookmarks = $conn->prepare("SELECT user_id FROM `bookmark` WHERE playlist_id = ?");
+      $select_bookmarks->execute([$get_id]);
+      if ($select_bookmarks->rowCount() > 0) {
+         while ($fetch_bookmarks = $select_bookmarks->fetch(PDO::FETCH_ASSOC)) {
+            $user_id = $fetch_bookmarks['user_id'];
 
+            // Retrieve user details based on the ID from the "users" table
+            $select_user = $conn->prepare("SELECT name, image FROM `users` WHERE id = ?");
+            $select_user->execute([$user_id]);
+            $fetch_user = $select_user->fetch(PDO::FETCH_ASSOC);
 
+            // Display user details
+            echo '<div class="box">';
+            echo '<div class="d-flex">';
+            echo '<img src="../uploaded_files/' . $fetch_user['image'] . '" alt="User Image" style="width: 50px; height: 50px; border-radius: 50%;">';
+            echo '<h3 class="title">' . $fetch_user['name'] . '</h3>';
+            echo '</div>';
+            echo '<a href="#" class="btn">View Details</a>';
+            echo '</div>';
+         }
+      } else {
+         echo '<p class="empty">No participants enrolled.</p>';
+      }
+      ?>
+   </div>
+</section>
 
 
 

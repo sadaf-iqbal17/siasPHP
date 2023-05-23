@@ -206,7 +206,6 @@ if(isset($_POST['update_now'])){
       
       
       <button id="startButton" class="inline-btn">Start</button>
-      <button id="stopButton" class="inline-btn">Stop</button>
       <video id="cam_input" height="220" width="320"></video>
       <canvas id="canvas_output"></canvas>
       <script src="eye-detect.js" type="text/JavaScript"></script>
