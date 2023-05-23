@@ -60,8 +60,8 @@
       <div class="flex">
          <div class="box">
             <span><?= $total_playlists; ?></span>
-            <p>total playlists</p>
-            <a href="playlists.php" class="btn">view playlists</a>
+            <p>total Courses</p>
+            <a href="playlists.php" class="btn">view Courses</a>
          </div>
          <div class="box">
             <span><?= $total_contents; ?></span>

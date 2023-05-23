@@ -127,7 +127,7 @@ if(isset($_POST['delete_playlist'])){
 
 <section class="playlists">
 
-   <h1 class="heading">playlists</h1>
+   <h1 class="heading">Courses</h1>
 
    <div class="box-container">
    

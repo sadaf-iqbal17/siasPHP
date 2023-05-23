@@ -154,9 +154,9 @@ if(isset($_POST['delete_video'])){
       <input type="text" name="title" maxlength="100" required placeholder="enter video title" class="box" value="<?= $fecth_videos['title']; ?>">
       <p>update description <span>*</span></p>
       <textarea name="description" class="box" required placeholder="write description" maxlength="1000" cols="30" rows="10"><?= $fecth_videos['description']; ?></textarea>
-      <p>update playlist</p>
+      <p>update Course</p>
       <select name="playlist" class="box">
-         <option value="<?= $fecth_videos['playlist_id']; ?>" selected>--select playlist</option>
+         <option value="<?= $fecth_videos['playlist_id']; ?>" selected>--select Course</option>
          <?php
          $select_playlists = $conn->prepare("SELECT * FROM `playlist` WHERE tutor_id = ?");
          $select_playlists->execute([$tutor_id]);
@@ -169,7 +169,7 @@ if(isset($_POST['delete_video'])){
          ?>
          <?php
          }else{
-            echo '<option value="" disabled>no playlist created yet!</option>';
+            echo '<option value="" disabled>no Course created yet!</option>';
          }
          ?>
       </select>
