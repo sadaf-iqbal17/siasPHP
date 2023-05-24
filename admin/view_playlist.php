@@ -165,19 +165,19 @@ if(isset($_POST['delete_video'])){
       if ($select_bookmarks->rowCount() > 0) {
          while ($fetch_bookmarks = $select_bookmarks->fetch(PDO::FETCH_ASSOC)) {
             $user_id = $fetch_bookmarks['user_id'];
-
+         
             // Retrieve user details based on the ID from the "users" table
             $select_user = $conn->prepare("SELECT name, image FROM `users` WHERE id = ?");
             $select_user->execute([$user_id]);
             $fetch_user = $select_user->fetch(PDO::FETCH_ASSOC);
-
+         
             // Display user details
             echo '<div class="box">';
             echo '<div class="d-flex">';
             echo '<img src="../uploaded_files/' . $fetch_user['image'] . '" alt="User Image" style="width: 50px; height: 50px; border-radius: 50%;">';
             echo '<h3 class="title">' . $fetch_user['name'] . '</h3>';
             echo '</div>';
-            echo '<a href="#" class="btn">View Details</a>';
+            echo '<a href="participants_detail.php?user_id=' . $user_id . '&playlist_id=' . $get_id . '" class="btn">View Details</a>';
             echo '</div>';
          }
       } else {
@@ -186,17 +186,6 @@ if(isset($_POST['delete_video'])){
       ?>
    </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include '../components/footer.php'; ?>
 
