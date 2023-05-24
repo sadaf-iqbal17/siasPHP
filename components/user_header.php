@@ -82,7 +82,7 @@ if(isset($message)){
          <img src="uploaded_files/<?= $fetch_profile['image']; ?>" alt="">
          <h3><?= $fetch_profile['name']; ?></h3>
          <span>student</span>
-         <a href="profile.php" class="btn">view profile</a>j
+         <a href="profile.php" class="btn">view profile</a>
          <?php
             }else{
          ?>
