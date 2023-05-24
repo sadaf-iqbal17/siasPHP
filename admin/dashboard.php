@@ -82,31 +82,18 @@ $total_comments = $select_comments->rowCount();
          <a href="comments.php" class="btn">view comments</a>
       </div>
 
-      <div class="box">
+      <!-- <div class="box">
          <h3>quick select</h3>
          <p>login or register</p>
          <div class="flex-btn">
             <a href="login.php" class="option-btn">login</a>
             <a href="register.php" class="option-btn">register</a>
          </div>
-      </div>
+      </div> -->
 
    </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <?php include '../components/footer.php'; ?>
