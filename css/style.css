@@ -1860,11 +1860,11 @@ padding-bottom: 13px;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
    }
 
-   .form-container .flex{
+   /* .form-container .flex{
       display: flex;
       gap: 0;
       flex-flow: column;
-   }
+   } */
 
    .watch-video .video-details .video{
       height: 30rem;
