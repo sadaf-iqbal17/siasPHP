@@ -75,11 +75,11 @@ if(isset($_POST['submit'])){
 
 <?php include 'components/user_header.php'; ?>
 
-<section class="form-container">
+<section class="form-container" style="width: 600px;">
 
    <form class="register" action="" method="post" enctype="multipart/form-data">
       <h3>create account</h3>
-      <div class="flex">
+      <div class="">
          <div class="col">
             <p>your name <span>*</span></p>
             <input type="text" name="name" placeholder="eneter your name" maxlength="50" required class="box">

@@ -76,11 +76,11 @@ if(isset($message)){
 
 <!-- register section starts  -->
 
-<section class="form-container">
+<section class="form-container" style="width: 600px;">
 
    <form class="register" action="" method="post" enctype="multipart/form-data">
       <h3>register new</h3>
-      <div class="flex">
+      <div>
          <div class="col">
             <p>your name <span>*</span></p>
             <input type="text" name="name" placeholder="eneter your name" maxlength="50" required class="box">
