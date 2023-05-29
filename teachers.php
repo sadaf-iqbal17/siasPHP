@@ -71,9 +71,12 @@ if(isset($_COOKIE['user_id'])){
    <div class="overlay"></div> <!-- Transparent div overlay -->
    <div class="box offer">
       <h1 class="t-text">Become a tutor</h1>
-      <a href="admin/login.php" class="inline-btn">Login</a>
-      <a href="admin/register.php" class="inline-btn">Register</a>
+      <a href="admin/login.php" class="inline-option-btn"  >Login</a>
+      <a href="admin/register.php" class="inline-option-btn">Register</a>
    </div>
+   <img src="images/teacher.png "  style="width:35%;margin-bottom:40px;" alt="">
+
+   <img class="teacher2"src="images/teacher2.png" style="height:95%; margin-top:15px; margin-left:30%; position:relative; float:right;" alt="">
 </div>
 
 
