@@ -1,17 +1,15 @@
 // Import required modules
 import vision from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0";
-const { FaceLandmarker, FilesetResolver, DrawingUtils } = vision;
+const { FaceLandmarker, FilesetResolver} = vision;
 
 // Get DOM elements
 const demosSection = document.getElementById("demos");
-const videoBlendShapes = document.getElementById("video-blend-shapes");
 
 // Initialize variables
 let faceLandmarker;
 let enableWebcamButton;
 let runningMode = "IMAGE";
 let webcamRunning = false;
-const videoWidth = 480;
 let opened = 0, closed = 0;
 
 // Function to run the demo
@@ -29,18 +27,13 @@ async function runDemo() {
         runningMode,
         numFaces: 1
     });
-
     // Show the demos section
     demosSection.classList.remove("invisible");
 }
-
 // Run the demo
 runDemo();
 // Get video and canvas elements
 const video = document.getElementById("webcam");
-const canvasElement = document.getElementById("output_canvas");
-const canvasCtx = canvasElement.getContext("2d");
-
 // Check if webcam access is supported
 function hasGetUserMedia() {
     return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
@@ -60,7 +53,6 @@ function enableCam(event) {
         console.log("Wait! faceLandmarker not loaded yet.");
         return;
     }
-
     // Toggle webcam running state
     if (webcamRunning === true) {
         webcamRunning = false;
@@ -69,12 +61,10 @@ function enableCam(event) {
         webcamRunning = true;
         enableWebcamButton.innerText = "DISABLE PREDICTIONS";
     }
-
     // Define webcam stream constraints
     const constraints = {
         video: true
     };
-
     // Activate webcam stream
     navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
         video.srcObject = stream;
@@ -85,18 +75,10 @@ function enableCam(event) {
 // Initialize variables for webcam prediction
 let lastVideoTime = -1;
 let results = undefined;
-const drawingUtils = new DrawingUtils(canvasCtx);
+// const drawingUtils = new DrawingUtils(canvasCtx);
 
 // Function to perform face detection on webcam stream
 async function predictWebcam() {
-    const radio = video.videoHeight / video.videoWidth;
-    video.style.width = videoWidth + "px";
-    video.style.height = videoWidth * radio + "px";
-    canvasElement.style.width = videoWidth + "px";
-    canvasElement.style.height = videoWidth * radio + "px";
-    canvasElement.width = video.videoWidth;
-    canvasElement.height = video.videoHeight;
-
     // Change running mode to video
     if (runningMode === "IMAGE") {
         runningMode = "VIDEO";
@@ -111,21 +93,6 @@ async function predictWebcam() {
         lastVideoTime = video.currentTime;
         results = faceLandmarker.detectForVideo(video, nowInMs);
     }
-
-    // Draw landmarks on the video frame
-    if (results.faceLandmarks) {
-        for (const landmarks of results.faceLandmarks) {
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_TESSELATION, { color: "#C0C0C070", lineWidth: 1 });
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_RIGHT_EYE, { color: "#FF3030" });
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_RIGHT_EYEBROW, { color: "#FF3030" });
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_LEFT_EYE, { color: "#30FF30" });
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_LEFT_EYEBROW, { color: "#30FF30" });
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_FACE_OVAL, { color: "#E0E0E0" });
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_LIPS, { color: "#E0E0E0" });
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_RIGHT_IRIS, { color: "#FF3030" });
-            drawingUtils.drawConnectors(landmarks, FaceLandmarker.FACE_LANDMARKS_LEFT_IRIS, { color: "#30FF30" });
-        }
-    }
     // Calculate attentiveness score
     attentivness(results.faceBlendshapes);
     // Call the function again to keep predicting when the browser is ready
@@ -133,7 +100,6 @@ async function predictWebcam() {
         window.requestAnimationFrame(predictWebcam);
     }
 }
-
 // Function to calculate attentiveness score
 function attentivness(blendShapes) {
     let attentivnessScore = 0;
@@ -151,7 +117,6 @@ function attentivness(blendShapes) {
             }
         }
     });
-    attentivnessScore = (opened / (opened + closed)) * 100;
-    console.log("Attentivness Score: " + attentivnessScore + "%");
+    attentivnessScore = ((opened / (opened + closed)) * 100).toFixed(2);
     document.getElementById("attentiveness").innerHTML = attentivnessScore + "%";
 }

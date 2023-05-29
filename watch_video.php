@@ -211,29 +211,15 @@ if(isset($_POST['update_now'])){
             -moz-transform: rotateY(180deg);
             height: 200px;
             width: 200px;
-            }
-            .canvas {
-            z-index: 1;
-            position: absolute;
-            pointer-events: none;
-            }
-            .output_canvas {
-            transform: rotateY(180deg);
-            -webkit-transform: rotateY(180deg);
-            -moz-transform: rotateY(180deg);
-            height: 200px;
-            width: 200px;
+            border-radius: 10%;
             }
       </style>
            
 
       <div class="tutor">
          <button id="webcamButton" class="inline-btn">ENABLE WEBCAM</button>
-         <div style="position: relative;">
-            <video id="webcam" autoplay playsinline></video>
-            <canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
-         </div>
          <h1 id="attentiveness"></h1>
+         <video id="webcam" autoplay playsinline></video>
       </div>
 
 
