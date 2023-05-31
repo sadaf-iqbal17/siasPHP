@@ -140,8 +140,7 @@ if(isset($_POST['update_now'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   <script async src="jsModel/opencv.js" onload="openCvReady();"></script>
-   <script src="jsModel/utils.js"></script>
+   
 
 </head>
 <body>
@@ -203,18 +202,29 @@ if(isset($_POST['update_now'])){
 
 
       <!---enabling camera to record the gestures--->
-      
-      
-      <button id="startButton" class="inline-btn">Start</button>
-      <video id="cam_input" height="220" width="320"></video>
-      <canvas id="canvas_output"></canvas>
-      <script src="eye-detect.js" type="text/JavaScript"></script>
       <style>
-         #cam_input, #canvas_output {
-            position: absolute;
-            right: 200px;
-         }
+            #webcam {
+            clear: both;
+            display: block;
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            height: 200px;
+            width: 200px;
+            border-radius: 10%;
+            }
       </style>
+           
+
+      <div class="tutor">
+         <button id="webcamButton" class="inline-btn">ENABLE WEBCAM</button>
+         <h1 id="attentiveness"></h1>
+         <video id="webcam" autoplay playsinline></video>
+      </div>
+
+
+      <!----end of enabling camera to record the gestures----->
+
 
       <div class="info">
          <p><i class="fas fa-calendar"></i><span><?= $fetch_content['date']; ?></span></p>
@@ -324,7 +334,7 @@ if(isset($_POST['update_now'])){
 <?php include 'components/footer.php'; ?>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script type="module" src="./detection.js"></script>
    
 </body>
 </html>
