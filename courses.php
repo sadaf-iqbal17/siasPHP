@@ -29,15 +29,7 @@ if(isset($_COOKIE['user_id'])){
 
 <?php include 'components/user_header.php'; ?>
 
-<!-- courses section starts  -->
-<center><div class="banner course-sec" style="background-image: linear-gradient(to right, rgba(200, 8,207, 0.5), rgba(28, 70, 184, 0.5)); height:80vh; ">
-     <div class="column1" style="margin-left:6%" >
-       <h1 style="background-color:white; color:black;padding:30px;text-align:center;border:4px solid #FBC718">Learning that gets you</h1>
-     </div>
-     <div class="column2"  style="width: 35%; justify-content:flex-start;">
-      <img src="images/register-submit.png" class="course-img" style="position:relative; float:right;" alt="">
-     </div>
-   </div>
+
 <section class="courses">
 
 <h1 class="about-us" style=" margin-bottom:100px;   border-bottom: var(--border); width:80%">All Courses</h1>
