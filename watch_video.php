@@ -123,7 +123,6 @@ if(isset($_POST['update_now'])){
    }
 
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -197,8 +196,32 @@ if(isset($_POST['update_now'])){
             $fetch_tutor = $select_tutor->fetch(PDO::FETCH_ASSOC);
    ?>
    <div class="video-details">
-      <video src="uploaded_files/<?= $fetch_content['video']; ?>" class="video" poster="uploaded_files/<?= $fetch_content['thumb']; ?>" controls autoplay></video>
+      <video src="uploaded_files/<?= $fetch_content['video']; ?>" class="video" poster="uploaded_files/<?= $fetch_content['thumb']; ?>" controls ></video>
       <h3 class="title"><?= $fetch_content['title']; ?></h3>
+      <script>
+         // Get the video element
+         const video = document.querySelector('.video');
+
+         // Add event listener for video play event
+         video.addEventListener('play', function() {
+            // Send an AJAX request to update the attendance
+            $.ajax({
+               url: 'update_attendance.php',
+               type: 'POST',
+               data: {
+                  user_id: '<?php echo $user_id; ?>',
+                  content_id: '<?php echo $content_id; ?>'
+               },
+               success: function(response) {
+                  console.log(response); // You can handle the response here if needed
+               },
+               error: function(xhr, status, error) {
+                  console.log(error); // Handle any errors here
+               }
+            });
+         });
+      </script>
+
 
 
       <!---enabling camera to record the gestures--->
@@ -217,7 +240,7 @@ if(isset($_POST['update_now'])){
            
 
       <div class="tutor">
-         <button id="webcamButton" class="inline-btn">ENABLE WEBCAM</button>
+         <button id="webcamButton" class="inline-btn attentivness-btn">ENABLE WEBCAM</button>
          <h1 id="attentiveness"></h1>
          <video id="webcam" autoplay playsinline></video>
       </div>
@@ -323,12 +346,6 @@ if(isset($_POST['update_now'])){
 </section>
 
 <!-- comments section ends -->
-
-
-
-
-
-
 
 
 <?php include 'components/footer.php'; ?>
