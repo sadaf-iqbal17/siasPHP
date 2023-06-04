@@ -109,21 +109,26 @@ async function predictWebcam() {
 // Function to calculate attentiveness score
 function attentiveness(blendShapes) {
   let attentivenessScore = 0;
-  if (!blendShapes.length) {
-    return;
-  }
-  blendShapes[0].categories.map((shape) => {
-    if (
-      (shape.displayName || shape.categoryName) == "eyeBlinkLeft" ||
-      (shape.displayName || shape.categoryName) == "eyeBlinkRight"
-    ) {
-      if (shape.score > 0.3) {
-        closed++;
-      } else {
-        opened++;
+
+  if (!blendShapes || blendShapes.length === 0) {
+    // No face detected, set attentiveness score to 0
+    attentivenessScore = 0;
+  } else {
+    blendShapes[0].categories.forEach((shape) => {
+      if (
+        (shape.displayName || shape.categoryName) == "eyeBlinkLeft" ||
+        (shape.displayName || shape.categoryName) == "eyeBlinkRight"
+      ) {
+        if (shape.score > 0.3) {
+          closed++;
+        } else {
+          opened++;
+        }
       }
-    }
-  });
-  attentivenessScore = ((opened / (opened + closed)) * 100).toFixed(2);
+    });
+
+    attentivenessScore = ((opened / (opened + closed)) * 100).toFixed(2);
+  }
+
   document.getElementById("attentiveness").innerHTML = attentivenessScore + "%";
 }
