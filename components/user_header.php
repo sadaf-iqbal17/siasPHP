@@ -96,13 +96,20 @@ if(isset($message)){
          ?>
       </div>
 
-   <nav class="navbar">
-      <a href="home.php"><i class="fas fa-home"></i><span>home</span></a>
-      <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
-      <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
-      <a href="about.php"><i class="fas fa-question"></i><span>about us</span></a>
-      <a href="contact.php"><i class="fas fa-headset"></i><span>contact us</span></a>
-   </nav>
+      <nav class="navbar">
+   <?php
+   if (isset($user_id)) { // Assuming $user_id is the variable that holds the user's ID
+      echo '<a href="profile.php"><i class="fas fa-home"></i><span>home</span></a>';
+   } else {
+      echo '<a href="home.php"><i class="fas fa-home"></i><span>home</span></a>';
+   }
+   ?>
+   <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+   <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+   <a href="about.php"><i class="fas fa-question"></i><span>about us</span></a>
+   <a href="contact.php"><i class="fas fa-headset"></i><span>contact us</span></a>
+</nav>
+
 
 </div>
 
