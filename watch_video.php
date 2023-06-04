@@ -204,31 +204,80 @@ if (isset($_POST['update_now'])) {
                <h3 class="title">
                   <?= $fetch_content['title']; ?>
                </h3>
+
                <script>
-                  // Get the video element
-                  const video = document.querySelector('.video');
+   // Get the video element
+   const video = document.querySelector('.video');
 
-                  // Add event listener for video play event
-                  video.addEventListener('play', function () {
-                     // Send an AJAX request to update the attendance
-                     $.ajax({
-                        url: 'update_attendance.php',
-                        type: 'POST',
-                        data: {
-                           user_id: '<?php echo $user_id; ?>',
-                           content_id: '<?php echo $content_id; ?>',
-                           attentiveness: document.getElementById('attentiveness').textContent
-                        },
-                        success: function (response) {
-                           console.log(response); // You can handle the response here if needed
-                        },
-                        error: function (xhr, status, error) {
-                           console.log(error); // Handle any errors here
-                        }
-                     });
-                  });
-               </script>
+   // Variable to store the current attentiveness value
+   let currentAttentiveness = 0;
 
+   // Function to send the attentiveness value to update_attendance.php
+   function sendAttentiveness(attentiveness) {
+      // Send an AJAX request to update the attentiveness
+      $.ajax({
+         url: 'update_attendance.php',
+         type: 'POST',
+         data: {
+            user_id: '<?php echo $user_id; ?>',
+            content_id: '<?php echo $content_id; ?>',
+            attentiveness: attentiveness
+         },
+         success: function (response) {
+            console.log(response); // You can handle the response here if needed
+         },
+         error: function (xhr, status, error) {
+            console.log(error); // Handle any errors here
+         }
+      });
+   }
+
+   // Add event listener for video play event
+   video.addEventListener('play', function () {
+      // Send an AJAX request to update the attendance
+      $.ajax({
+         url: 'update_attendance.php',
+         type: 'POST',
+         data: {
+            user_id: '<?php echo $user_id; ?>',
+            content_id: '<?php echo $content_id; ?>',
+            status: 'watched'
+         },
+         success: function (response) {
+            console.log(response); // You can handle the response here if needed
+         },
+         error: function (xhr, status, error) {
+            console.log(error); // Handle any errors here
+         }
+      });
+
+      // Start sending the attentiveness value at regular intervals
+      const attentivenessInterval = setInterval(function () {
+         // Get the current attentiveness value (replace with your implementation)
+         const attentiveness = getCurrentAttentiveness();
+
+         // Check if the attentiveness value has changed
+         if (attentiveness !== currentAttentiveness) {
+            currentAttentiveness = attentiveness;
+            sendAttentiveness(attentiveness);
+         }
+      }, 1000); // Adjust the interval duration as needed
+   });
+
+   // Add event listener for video pause event
+   video.addEventListener('pause', function () {
+      // Stop sending the attentiveness value
+      clearInterval(attentivenessInterval);
+   });
+
+   // Function to get the current attentiveness value
+   function getCurrentAttentiveness() {
+      // Replace this with your implementation to retrieve the current attentiveness value
+      // For example, you can get it from the <h1> element with id "attentiveness"
+      const attentivenessElement = document.getElementById('attentiveness');
+      return parseFloat(attentivenessElement.innerText);
+   }
+</script>
 
 
                <!---enabling camera to record the gestures--->
